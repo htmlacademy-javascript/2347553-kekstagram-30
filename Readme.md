@@ -1,7 +1,7 @@
 # Личный проект «Кекстаграм»
 
 * Студент: [Павел Асташкин](https://up.htmlacademy.ru/javascript/30/user/2347553).
-* Наставник: [Arthur Litovko](https://https://htmlacademy.ru/profile/id6927).
+* Наставник: [Arthur Litovko](https://htmlacademy.ru/profile/id6927).
 
 ---
 
