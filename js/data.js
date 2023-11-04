@@ -1,4 +1,4 @@
-import {getRandomArrayElement, getRandomInteger, createIdGenerator} from './util.js';
+import {getRandomArrayElement, getRandomInteger} from './util.js';
 
 const PICTURE_COUNT = 25;
 const AVATAR_COUNT = 6;
@@ -27,6 +27,15 @@ const DESCRIPTIONS = [
   'Идеальное белоснежное облако!'
 ];
 const NAMES = ['Кирилл', 'Юлия', 'Евгений', 'Виктория', 'Михаил', 'Кристина'];
+
+const createIdGenerator = () => {
+  let lastGeneratedId = 0;
+
+  return () => {
+    lastGeneratedId += 1;
+    return lastGeneratedId;
+  };
+};
 
 const createMessage = () => Array.from(
   { length: getRandomInteger(1, 2) },
