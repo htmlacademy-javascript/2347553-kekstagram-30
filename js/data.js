@@ -4,8 +4,8 @@ const PICTURE_COUNT = 25;
 const AVATAR_COUNT = 6;
 const LIKE_MIN_COUNT = 15;
 const LIKE_MAX_COUNT = 200;
-const COMMENT_COUNT = 30;
-const COMMENT_LINES = [
+const COMMENTS_COUNT = 30;
+const COMMENTS_LINES = [
   'Всё отлично!',
   'В целом всё неплохо. Но не всё.',
   'Когда вы делаете фотографию, хорошо бы убирать палец из кадра. В конце концов это просто непрофессионально.',
@@ -39,7 +39,7 @@ const createIdGenerator = () => {
 
 const createMessage = () => Array.from(
   { length: getRandomInteger(1, 2) },
-  () => getRandomArrayElement(COMMENT_LINES),
+  () => getRandomArrayElement(COMMENTS_LINES),
 ).join(' ');
 
 const generateCommentId = createIdGenerator();
@@ -59,7 +59,7 @@ const createPicture = (index) => ({
   description: getRandomArrayElement(DESCRIPTIONS),
   likes: getRandomInteger(LIKE_MIN_COUNT, LIKE_MAX_COUNT),
   comments: Array.from(
-    { length: getRandomInteger(0, COMMENT_COUNT) },
+    { length: getRandomInteger(0, COMMENTS_COUNT) },
     createComment,
   )
 });
