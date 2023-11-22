@@ -1,10 +1,11 @@
-import {resetScale} from './scale.js';
+import { resetScale } from './scale.js';
 import {
   init as initEffect,
   reset as resetEffect
 } from './effect.js';
-import { sendData } from './api.js';
+import { sendPictures } from './api.js';
 import { showSuccessMessage, showErrorMessage } from './message.js';
+import { onKeyDownEscape } from './util.js';
 
 const MAX_HASHTAG_COUNT = 5;
 const VALID_SYMBOLS = /^#[a-zа-яё0-9]{1,19}$/i;
@@ -78,7 +79,7 @@ const hasValidCount = (value) => normalizeTags(value).length <= MAX_HASHTAG_COUN
 
 function onDocumentKeydown(evt) {
   const isErrorMessageExists = Boolean(document.querySelector('.error'));
-  if (evt.key === 'Escape' && !isTextFieldFocused() && !isErrorMessageExists) {
+  if (onKeyDownEscape() && !isTextFieldFocused() && !isErrorMessageExists) {
     evt.preventDefault();
     hideModal();
   }
@@ -99,7 +100,7 @@ const sendForm = async (formElement) => {
 
   try {
     toggleSubmitButton(true);
-    await sendData(new FormData(formElement));
+    await sendPictures(new FormData(formElement));
     toggleSubmitButton(false);
     hideModal();
     showSuccessMessage();
