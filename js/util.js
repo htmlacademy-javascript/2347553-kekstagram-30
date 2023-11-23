@@ -11,4 +11,16 @@ const showErrorMessage = () => {
   }, REMOVE_MESSAGE_TIMEOUT);
 };
 
-export {showErrorMessage};
+const getRandomIndex = (min, max) => Math.floor(Math.random() * (max - min));
+
+const debounce = (callback, timeoutDelay) => {
+  let timeoutId;
+  return (...rest) => {
+    clearTimeout(timeoutId);
+    timeoutId = setTimeout(() => callback.apply(this, rest), timeoutDelay);
+  };
+};
+
+const onKeyDownEscape = (evt) => evt.key === 'Escape';
+
+export {showErrorMessage, debounce, onKeyDownEscape, getRandomIndex};

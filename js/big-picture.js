@@ -1,3 +1,5 @@
+import { onKeyDownEscape } from './util.js';
+
 const COMMENTS_COUNT_SHOW = 5;
 
 const bigPictureElement = document.querySelector('.big-picture');
@@ -58,7 +60,7 @@ const onClosePictureButtonClick = () => {
 };
 
 function onDocumentKeydown(evt) {
-  if (evt.key === 'Escape') {
+  if (onKeyDownEscape()) {
     evt.preventDefault();
     hidePicture();
   }
