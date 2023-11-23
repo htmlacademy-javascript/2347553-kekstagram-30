@@ -13,7 +13,7 @@ const onCloseButtonClick = () => {
 };
 
 const onDocumentKeydown = (evt) => {
-  if (onKeyDownEscape()) {
+  if (onKeyDownEscape(evt)) {
     evt.preventDefault();
     hideMessage();
   }
