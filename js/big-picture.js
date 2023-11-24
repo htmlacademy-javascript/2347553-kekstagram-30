@@ -60,7 +60,7 @@ const onClosePictureButtonClick = () => {
 };
 
 function onDocumentKeydown(evt) {
-  if (onKeyDownEscape()) {
+  if (onKeyDownEscape(evt)) {
     evt.preventDefault();
     hidePicture();
   }
