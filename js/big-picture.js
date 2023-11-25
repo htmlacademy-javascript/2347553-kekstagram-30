@@ -51,7 +51,7 @@ const onCommentsLoaderClick = () => renderComments();
 const hidePicture = () => {
   commentsCountShown = 0;
   bigPictureElement.classList.add('hidden');
-  bodyElement.classList.remove('.modal-open');
+  bodyElement.classList.remove('modal-open');
   document.removeEventListener('keydown', onDocumentKeydown);
 };
 
@@ -75,7 +75,7 @@ const renderPicture = ({url, description, likes}) => {
 
 const showPicture = (pictureData) => {
   bigPictureElement.classList.remove('hidden');
-  bodyElement.classList.add('.modal-open');
+  bodyElement.classList.add('modal-open');
   document.addEventListener('keydown', onDocumentKeydown);
   comments = pictureData.comments;
   if (comments.length > 0) {
